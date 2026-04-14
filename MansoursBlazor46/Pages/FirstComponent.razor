@@ -1,0 +1,19 @@
+﻿@page "/first"
+<PageTitle>My first Comp.</PageTitle>
+
+<h3>FirstComponent</h3>
+<h4>@Message</h4>
+<input type="button" value="Show" @onclick='()=>ShowMe("a")' />
+<hr />
+<h2>One Way Binding From C# to HTML</h2>
+<input type="text" class="form form-control" value="@Message"/>
+<hr />
+<h2>Two Way binding </h2>
+<input type="text" class="form form-control" @bind-value="@Message" /><!--Input only-->
+<input type="text" class="form form-control" @bind="@Message" /><!--Input ,Select-->
+<hr />
+<h2>Two Way binding with update </h2>
+<input type="text" class="form form-control" @bind-value="@Message" @bind-value:event="oninput" />
+<input type="text" class="form form-control" @bind="@Message" @bind:event="oninput"/>
+
+
