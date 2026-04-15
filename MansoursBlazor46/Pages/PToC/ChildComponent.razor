@@ -1,0 +1,12 @@
+﻿<div style="border:3px solid red">
+    <h3>ChildComponent</h3>
+    <h4>@Msg</h4>
+    <h4>@no</h4>
+</div>
+@code {
+    [Parameter]//rout as segmebnt , parent attribute
+    public string Msg { get; set; }// = "default";
+
+    [Parameter]//rout as segmebnt , parent attribute
+    public int no { get; set; }// = "default";
+}

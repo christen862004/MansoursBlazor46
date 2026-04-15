@@ -1,0 +1,18 @@
+﻿<div style="border:3px solid red;padding:10px;margin:10px">
+
+    <h3>ChildComponent</h3>
+    <input type="button" class="form form-control" @onclick="ChangeMsg" />
+    <h3>@Msg</h3>
+</div>
+@code {
+    public string Msg { get; set; } = "Hello";
+    //decalre event 
+    [Parameter]
+    public EventCallback<string> MsgChangeEvent { get; set; }
+    public void ChangeMsg()
+    {
+        Msg += "a";
+        MsgChangeEvent.InvokeAsync(Msg);
+        //fire event "Invoke"
+    }
+}

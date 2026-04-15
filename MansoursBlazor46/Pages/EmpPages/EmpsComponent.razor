@@ -1,0 +1,25 @@
+﻿@page "/emps"
+<PageTitle>Employee</PageTitle>
+<h3>EmpsComponent</h3>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var item in EmpList)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>
+                <a href="/emps/details/@item.Id">Details</a>
+            </td>
+            <td>
+                <a href="/emps/Edit/@item.Id">Edit</a>
+            </td>
+        </tr>
+    }
+</table>

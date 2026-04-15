@@ -1,0 +1,29 @@
+﻿@page "/Emps/Edit/{id:int}"
+<PageTitle>Edit Employee</PageTitle>
+<h3>EmpEditComponent</h3>
+@if (EmployeeObj != null)
+{
+    <EditForm Model="EmployeeObj" OnSubmit="Save">
+        <div>
+            <label>Name</label>
+            <InputText class="form form-control" @bind-Value="EmployeeObj.Name"></InputText>
+        </div>
+        <div>
+            <label>Salary</label>
+            <InputNumber class="form form-control" @bind-Value="EmployeeObj.Salary"></InputNumber>
+        </div>
+        <div>
+            <label>Department</label>
+            <InputNumber class="form form-control" @bind-Value="EmployeeObj.DepartmentId"></InputNumber>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </EditForm>
+    <h1>@EmployeeObj</h1>
+}
+else
+{
+    <h1>Wait ... or invalid id</h1>
+}
+
+
+

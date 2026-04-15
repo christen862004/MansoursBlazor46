@@ -1,0 +1,11 @@
+﻿@page "/c"
+<h3>ParentComponent</h3>
+<h1>@LocalMsg</h1>
+<ChildComponent MsgChangeEvent="ChangeMsgHandeller"></ChildComponent>
+@code {
+    public string LocalMsg { get; set; }
+    public void ChangeMsgHandeller(string message)
+    {
+        LocalMsg = message;
+    }
+}

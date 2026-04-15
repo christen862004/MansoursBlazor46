@@ -1,0 +1,13 @@
+﻿<div style="border:3px solid red;padding:10px;margin:10px">
+    <h3>ChildComponent</h3>
+    <h4>@Msg</h4>
+    <h4>@Number</h4>
+</div>
+@code {
+    //attrbiute
+    [CascadingParameter(Name ="Message")]
+    public string Msg { get; set; } = "heelo";
+
+    [CascadingParameter(Name = "Number")]
+    public int Number { get; set; } 
+}

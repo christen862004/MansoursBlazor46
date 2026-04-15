@@ -1,0 +1,30 @@
+﻿@page "/emps/Details/{id:int}"
+@* @inject IService<Employee> EmpService *@
+<PageTitle>Details</PageTitle>
+<h3>EmpdetailsComponent</h3>
+@if (EmployeeObj != null)
+{
+    <h4>@EmployeeObj.Name</h4>
+    <h4>@EmployeeObj.Salary</h4>
+    <h4>@EmployeeObj.DepartmentId</h4>
+}
+else
+{
+    <h1>Wait or invlaid id</h1>
+}
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    public Employee EmployeeObj { get; set; }
+
+    [Inject]
+    public IService<Employee> EmpService { get; set; } //inject ask
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine(id);
+        EmployeeObj = EmpService.GetByID(id);
+        base.OnInitialized();
+    }
+}

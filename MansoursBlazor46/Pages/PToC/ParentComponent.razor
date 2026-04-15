@@ -1,0 +1,12 @@
+﻿@page "/p1"
+<h3>ParentComponent</h3>
+<input type="text" @bind-value="LocalMsg" class="form form-control" /><br />
+
+<ChildComponent Msg="@LocalMsg" no="11"></ChildComponent>
+<br /><br/>
+<ChildComponent ></ChildComponent>
+
+
+@code {
+    public string LocalMsg { get; set; } = "parent Message";
+}

@@ -1,3 +1,5 @@
+using MansoursBlazor46.Models;
+using MansoursBlazor46.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -11,8 +13,9 @@ namespace MansoursBlazor46
             
             builder.RootComponents.Add<App>("#app");//seach from any tag with id ="app" load App Component
             builder.RootComponents.Add<HeadOutlet>("head::after");//SPA
-            
+
             //register services day3
+            builder.Services.AddScoped<IService<Employee>, EmployeeService>();//register
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();

@@ -1,0 +1,24 @@
+﻿@page "/G"
+<h3>GrandComponent</h3>
+<input type="text" @bind-value="LocalMsg" class="form form-control" />
+<br />
+
+<CascadingValue Name="Message" Value="LocalMsg">
+    <CascadingValue Name="Number" Value="11">
+        <ParentComponent ></ParentComponent>
+    </CascadingValue>
+</CascadingValue>
+
+
+
+
+
+
+
+
+<CascadingValue Name="Message" Value="@("christen")">
+    <ParentComponent></ParentComponent>
+</CascadingValue>
+@code {
+    public string LocalMsg { get; set; } = "heelooooo";
+}

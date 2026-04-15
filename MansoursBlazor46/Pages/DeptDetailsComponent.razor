@@ -1,0 +1,13 @@
+﻿@page "/Dept/{id:int}"
+
+<h3>DeptDetailsComponent</h3>
+<h1>@id</h1>
+@code {
+    public DeptDetailsComponent()
+    {
+        Console.WriteLine($"id={id}");
+    }
+    //parmeter rout
+    [Parameter]
+    public int id { get; set; } 
+}

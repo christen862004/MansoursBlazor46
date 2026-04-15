@@ -1,0 +1,32 @@
+﻿@page "/cycle/{id:int}"
+<h3>CycleComponent</h3>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    public CycleComponent()
+    {
+        Console.WriteLine($"1) Constructor {id}" );
+    }
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine($"3) OnInitialized {id}");
+
+        base.OnInitialized();
+    }
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine($"4) OnParametersSet {id}");
+
+        base.OnParametersSet();
+    }
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        Console.WriteLine($"2) SetParametersAsync {id}");
+
+        return base.SetParametersAsync(parameters);
+    }
+  
+}
