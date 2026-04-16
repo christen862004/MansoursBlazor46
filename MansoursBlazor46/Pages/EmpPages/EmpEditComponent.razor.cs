@@ -24,5 +24,9 @@ namespace MansoursBlazor46.Pages.EmpPages
             Console.WriteLine("Save Success");
             NavManager.NavigateTo("/emps");
         }
+        public void ShowMsg()
+        {
+            Console.WriteLine("Model Invalid");
+        }
     }
 }
